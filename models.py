@@ -1,6 +1,6 @@
-from sqlalchemy import Column, Integer, String
 from database import engine
 from sqlalchemy.orm import declarative_base
+from sqlalchemy import Column, Integer, String, ForeignKey
 
 Base = declarative_base()
 
@@ -12,11 +12,14 @@ class UserDB(Base):
     password = Column(String(100))
 
 class ChatDB(Base):
-    __tablename__ = "chats"
+    __tablename__ = "chat"
 
     id = Column(Integer, primary_key=True, index=True)
     question = Column(String(255))
     answer = Column(String(255))
+
+    # ⭐ 新增这一行
+    user_id = Column(Integer, ForeignKey("users.id"))
 
 # 创建表
 Base.metadata.create_all(bind=engine)

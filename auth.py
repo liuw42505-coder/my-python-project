@@ -129,6 +129,12 @@ def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(securit
     #                            ^^^^^   ^^^^^^^^^^   ^^^^^^^^^^^^^^^^^^^^^^^^
     #                            token      密钥         算法列表
         """
+        """
+            return payload
+             ↓ 返回用户信息
+               例如: {"user_id": 1, "exp": 1705312245}
+           """
         return payload
+
     except JWTError:
         raise HTTPException(status_code=401, detail="无效的token")
