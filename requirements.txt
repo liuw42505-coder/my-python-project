@@ -4,3 +4,4 @@ passlib
 fastapi
 sqlalchemy
 openai
+pydantic

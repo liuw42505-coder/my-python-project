@@ -20,4 +20,17 @@ class ChatDB(Base):
 
 # 创建表
 Base.metadata.create_all(bind=engine)
+"""
+ORM（Object-Relational Mapping，对象关系映射） 是一种编程技术，用于在面向对象编程语言和关系型数据库之间建立映射关系。
+Python 面向对象世界          关系型数据库世界
+━━━━━━━━━━━━━━━━━━━━      ━━━━━━━━━━━━━━━━━━━━
+类 (Class)        ←→      表 (Table)
+对象 (Object)     ←→      行 (Row)
+属性 (Attribute)  ←→      列 (Column)
+无需写 SQL
+数据库无关性
+类型安全
+安全性更高
+代码更清晰
+"""
 
