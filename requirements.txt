@@ -1,0 +1,6 @@
+
+python-jose
+passlib
+fastapi
+sqlalchemy
+openai
